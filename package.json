@@ -1,6 +1,6 @@
 {
   "name": "target-injector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wrapper to inject code into target",
   "main": "Injector.js",
   "scripts": {
