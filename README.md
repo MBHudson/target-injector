@@ -30,14 +30,14 @@ new Injector('target.js' /* not read as data is specified */,
   .dest(injected => console.log(`${injected}`));
 ```
 
-### Install
+# Install
 ```sh
 npm i target-injector
 # dependent components for handlers
 npm i htmlparser2 domhandler cssauron espree estraverse esquery
 ```
 
-### Set up `Injector` class
+# Set up `Injector` class
 ```js
 const { InjectorFactory, InjectionHandlerBase } = require('target-injector');
 const { HtmlInjectionHandlerFactory } = require('target-injector/HtmlInjectionHandlerFactory.js');
@@ -71,9 +71,9 @@ const Injector = InjectorFactory({
 });
 ```
 
-## Examples
+# Examples
 
-### Injection with fallback
+## Injection with fallback
 ```js
 new Injector('target.html');
   .parse()
@@ -85,7 +85,7 @@ new Injector('target.html');
   .dest('injected-target.html');
 ```
 
-### Patch JavaScript code with chaining
+## Patch JavaScript code with chaining
 ```js
 // JavaScript: Extracted from target-injector/Injector.js
 // Patch estraverse.attachComments for trailingComments to work
@@ -120,7 +120,7 @@ new Injector(require.resolve(estraverse))
   });
 ```
 
-### Validator and Injection Strings as a callback function
+## Validator and Injection Strings as a callback function
 ```js
 // 
 let injector = new Injector('target.html');
@@ -165,7 +165,7 @@ injector
   .dest('injected-target.html')
 ```
 
-### JavaScript injection with next and prev attributes
+## JavaScript injection with next and prev attributes
 ```js
 new Injector('target.js' /* not read as data is specified */, 
     { data: `const arr = ['a', 'b', 'c', 'd', 'e']` }
@@ -193,7 +193,7 @@ new Injector('target.js' /* not read as data is specified */,
   })
 ```
 
-### Select a node with `trailingComments`
+## Select a node with `trailingComments`
 ```js
 new Injector('target.js' /* not read as data is specified */, { data: `
   obj.prop = {
